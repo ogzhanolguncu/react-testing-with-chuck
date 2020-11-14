@@ -1,25 +1,19 @@
+import { ChakraProvider, extendTheme } from '@chakra-ui/core';
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import Home from './components/Home';
+
+const fonts = {
+  body: `Oswald,-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol"`,
+  heading: `Oswald,-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol"`,
+};
+
+const customTheme = extendTheme({ fonts });
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <ChakraProvider theme={customTheme}>
+      <Home />
+    </ChakraProvider>
   );
 }
 
